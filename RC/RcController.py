@@ -1,0 +1,2 @@
+class RcControllerClass:
+    print ""
