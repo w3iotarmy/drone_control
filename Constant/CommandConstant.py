@@ -58,5 +58,8 @@ class CommandConstantClass:
         return 'rc_03'
 
     @staticmethod
+    def is_equal_manual_fly():
+        return 'manual_fly'
+    @staticmethod
     def get_wp_file_name():
         return 'wp.txt'

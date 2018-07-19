@@ -166,6 +166,16 @@ def init_socket():
                     init_aircraft()
                 elif (val == CommandConstant.CommandConstantClass.is_equal_read_channels()):
                     DroneChannels.DroneChannelsClass.read_channels(vehicle)
+                elif (val == CommandConstant.CommandConstantClass.is_equal_manual_fly()):
+                    rc_0 = int(obj_data['channel_0'])
+                    rc_1 = int(obj_data['channel_1'])
+                    rc_2 = int(obj_data['channel_2'])
+                    rc_3 = int(obj_data['channel_3'])
+                    rc_4 = int(obj_data['channel_4'])
+                    rc_5 = int(obj_data['channel_5'])
+                    rc_6 = int(obj_data['channel_6'])
+                    rc_7 = int(obj_data['channel_7'])
+                    print ("RC val ", rc_0," ",rc_1," ",rc_2," ",rc_3," ",rc_4," ",rc_5," ",rc_6," ",rc_7)
             elif sender_user==User.UserClass.self_user():
                 cvb=0
                 #print ("self message")
