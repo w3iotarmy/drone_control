@@ -14,6 +14,7 @@ from Mission import DroneMission
 from Utility import ProjectCommand,SdCard,JsonBuilder
 from GoogleLatLng import LatLngCalculation
 from flask import Flask, render_template
+from RC import RcController
 from flask_socketio import SocketIO
 app = Flask(__name__)
 app.config['SECRET_KEY'] = Server.ServerClass.get_server_secret_key()
@@ -175,7 +176,7 @@ def init_socket():
                     rc_5 = int(obj_data['channel_5'])
                     rc_6 = int(obj_data['channel_6'])
                     rc_7 = int(obj_data['channel_7'])
-                    print ("RC val ", rc_0," ",rc_1," ",rc_2," ",rc_3," ",rc_4," ",rc_5," ",rc_6," ",rc_7)
+                    RcController.RcControllerClass.send_rc_command(rc_0, rc_1, rc_2, rc_3, rc_4, rc_5, rc_6, rc_7)
             elif sender_user==User.UserClass.self_user():
                 cvb=0
                 #print ("self message")
